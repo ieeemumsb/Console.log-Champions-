@@ -30,7 +30,7 @@ const items = [
 
 export function PublicSidebar() {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="z-[51]">
       <SidebarHeader>
         <SidebarMenu className="px-4 py-3">
           <span className="text-2xl font-bold flex items-center">

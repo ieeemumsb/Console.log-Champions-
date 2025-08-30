@@ -15,7 +15,11 @@ import type {
 } from "convex/server";
 import type * as call from "../call.js";
 import type * as events from "../events.js";
+import type * as files from "../files.js";
 import type * as http from "../http.js";
+import type * as openAi from "../openAi.js";
+import type * as queries from "../queries.js";
+import type * as spell from "../spell.js";
 import type * as users from "../users.js";
 
 /**
@@ -29,7 +33,11 @@ import type * as users from "../users.js";
 declare const fullApi: ApiFromModules<{
   call: typeof call;
   events: typeof events;
+  files: typeof files;
   http: typeof http;
+  openAi: typeof openAi;
+  queries: typeof queries;
+  spell: typeof spell;
   users: typeof users;
 }>;
 export declare const api: FilterApi<

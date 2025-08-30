@@ -44,4 +44,16 @@ export default defineSchema({
   call: defineTable({
     roomId: v.string(),
   }),
+  spells: defineTable({
+    name: v.string(),
+    level: v.string(), // "1" | "2" | "3"
+    summary: v.string(),
+    storageId: v.string(),
+    authorId: v.id("users"),
+    spellLevel: v.optional(v.string()),
+    searchText: v.string(), // <-- combined text we will index
+  }).searchIndex("search_spells", {
+    searchField: "searchText",
+    filterFields: ["level"], // optional but handy for filtering by level
+  }),
 });
