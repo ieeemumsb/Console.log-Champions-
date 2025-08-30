@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
+import { ModeToggle } from './ModeToggle'
 
 export function Header() {
   return (
@@ -26,7 +27,9 @@ export function Header() {
         </SignedOut>
         <SignedIn>
           <UserButton />
+          
         </SignedIn>
+        <ModeToggle />
       </div>
     </header>
   )
