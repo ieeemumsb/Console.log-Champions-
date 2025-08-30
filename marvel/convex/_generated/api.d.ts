@@ -16,6 +16,7 @@ import type {
 import type * as accounts from "../accounts.js";
 import type * as alerts from "../alerts.js";
 import type * as budgets from "../budgets.js";
+import type * as call from "../call.js";
 import type * as dashboard from "../dashboard.js";
 import type * as departments from "../departments.js";
 import type * as events from "../events.js";
@@ -37,6 +38,7 @@ declare const fullApi: ApiFromModules<{
   accounts: typeof accounts;
   alerts: typeof alerts;
   budgets: typeof budgets;
+  call: typeof call;
   dashboard: typeof dashboard;
   departments: typeof departments;
   events: typeof events;

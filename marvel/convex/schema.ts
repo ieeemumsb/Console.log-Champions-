@@ -41,11 +41,8 @@ export default defineSchema({
     ),
   }).index("byUserId", ["userId"]),
 
-  help: defineTable({
-    needHelp: v.boolean(),
-    description: v.optional(v.string()),
-    latitude: v.optional(v.number()),
-    longitude: v.optional(v.number()),
+  call: defineTable({
+    roomId: v.string(),
   }),
 
   // Departments table: Stark Industries departments
