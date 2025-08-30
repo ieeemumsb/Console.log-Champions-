@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { AlertTriangle,} from "lucide-react";
-import { redirect } from "next/navigation";
 
 export default function JoinCall() {
   const activeCall = useQuery(api.call.activeCall);
