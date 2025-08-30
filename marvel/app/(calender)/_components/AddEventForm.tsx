@@ -148,11 +148,14 @@ export const AddEventForm = ({
                         selected={
                           field.value ? new Date(field.value) : undefined
                         }
-                        onSelect={(date) =>
-                          field.onChange(
-                            date?.toISOString().split("T")[0] || ""
-                          )
-                        }
+                        onSelect={(date) => {
+                          if (!date) return;
+                          const localDate = new Date(date);
+                          const year = localDate.getFullYear();
+                          const month = String(localDate.getMonth() + 1).padStart(2, "0");
+                          const day = String(localDate.getDate()).padStart(2, "0");
+                          field.onChange(`${year}-${month}-${day}`);
+                        }}
                         className="border rounded-md"
                       />
                     </PopoverContent>
