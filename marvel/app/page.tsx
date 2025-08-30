@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,8 +7,8 @@ export default function Home() {
       <Link href={"/finance"}>
         <Button>Finance</Button>
       </Link>
-      <Link href={"/actions"}>
-        <Button>Actions</Button>
+      <Link href={"/calender"}>
+        <Button>Calendar</Button>
       </Link>
       <Link href={"/"}>
         <Button>Study</Button>
