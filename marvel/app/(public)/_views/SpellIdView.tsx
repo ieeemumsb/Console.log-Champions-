@@ -45,7 +45,7 @@ export const SpellIdView = ({ spellId }: { spellId: string }) => {
     spellSummary: string
   ): Promise<string> {
     try {
-      const res = await fetch("/api/ai-response", {
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

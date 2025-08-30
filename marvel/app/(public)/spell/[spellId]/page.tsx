@@ -1,10 +1,11 @@
-import React from 'react'
-import { SpellIdView } from '../../_views/SpellIdView'
+import React from "react";
+import { SpellIdView } from "../../_views/SpellIdView";
+import { Id } from "@/convex/_generated/dataModel";
 
-const page = ({params}:{params:{spellId:string}}) => {
-  return (
-  <SpellIdView spellId={params.spellId} />
-  )
-}
+const page = async ({ params }: { params: { spellId: Id<"spells"> } }) => {
+  const { spellId } = await params;
 
-export default page
+  return <SpellIdView spellId={spellId} />;
+};
+
+export default page;
