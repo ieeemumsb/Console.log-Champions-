@@ -17,6 +17,17 @@ export default defineSchema({
     role: v.optional(v.union(v.literal("admin"), v.literal("manager"), v.literal("analyst"), v.literal("viewer"))),
     departmentId: v.optional(v.id("departments")),
   })
+    // Index to quickly look up users by their external Clerk ID
+    .index("byExternalId", ["externalId"]),
+  // Events table: stores event information
+  events: defineTable({
+    title: v.string(),
+    description: v.optional(v.string()),
+    date: v.string(),
+    time: v.string(), 
+    location: v.string(),
+    priority: v.union(v.literal("High"), v.literal("Medium"), v.literal("Low")), // new required field
+    userId: v.id("users"),
     .index("byExternalId", ["externalId"])
     .index("byDepartment", ["departmentId"]),
 
