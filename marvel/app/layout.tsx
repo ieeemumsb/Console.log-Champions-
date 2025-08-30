@@ -1,9 +1,10 @@
-import { ClerkProvider } from '@/components/clerk-provider'
+import { ClerkProvider } from '@/providers/clerk-provider'
 import { Header } from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/providers/theme-provider'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import ConvexClientProvider from '@/providers/ConvexClientProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,14 +28,23 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className="h-full" suppressHydrationWarning>
-        <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-full flex-col antialiased`}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <Header />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
+      <ConvexClientProvider>
+        <html lang="en" className="h-full" suppressHydrationWarning>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} flex min-h-full flex-col antialiased`}
+          >
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Header />
+              {children}
+            </ThemeProvider>
+          </body>
+        </html>
+      </ConvexClientProvider>
     </ClerkProvider>
-  )
+  );
 }
