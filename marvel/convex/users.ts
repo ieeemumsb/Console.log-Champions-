@@ -71,3 +71,20 @@ export const getUser = async (ctx:QueryCtx)=>{
     if(!user) throw new Error("No user found");
     return user;
 }
+
+export const getUserByExternalId = query({
+  args: { externalId: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("users")
+      .withIndex("byExternalId", (q) => q.eq("externalId", args.externalId))
+      .first();
+  },
+});
+
+export const getUserById = query({
+  args: { userId: v.id("users") },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.userId);
+  },
+});
