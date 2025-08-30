@@ -31,7 +31,7 @@ export default function RootLayout({
       <ConvexClientProvider>
         <html lang="en" className="h-full" suppressHydrationWarning>
           <body
-            className={`${geistSans.variable} ${geistMono.variable} flex min-h-full flex-col antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} flex min-h-full flex-col antialiased border-box`}
           >
             <ThemeProvider
               attribute="class"
@@ -39,7 +39,6 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-            
               {children}
             </ThemeProvider>
           </body>
