@@ -12,16 +12,19 @@ export default defineSchema({
     emailAddress: v.string(),
     imageUrl: v.string(),
     // External ID: Clerk's unique user identifier
-  
+
     externalId: v.string(),
   })
     // Index to quickly look up users by their external Clerk ID
     .index("byExternalId", ["externalId"]),
-    events: defineTable({
-      title: v.string(),
-      description: v.string(),
-      date: v.string(),
-      userId: v.id("users"),
-      location: v.string(),
-    }).index("byUserId", ["userId"]),
+  // Events table: stores event information
+  events: defineTable({
+    title: v.string(),
+    description: v.optional(v.string()),
+    date: v.string(),
+    time: v.string(), 
+    location: v.string(),
+    priority: v.union(v.literal("High"), v.literal("Medium"), v.literal("Low")), // new required field
+    userId: v.id("users"),
+  }).index("byUserId", ["userId"]),
 });
