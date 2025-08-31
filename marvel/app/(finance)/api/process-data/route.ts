@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
-import { cleanFinancialData } from '@/lib/openai-service';
-import { processFinancialData } from '@/lib/utils';
+import { cleanFinancialData } from '../../_lib/openai-service';
+import { processFinancialData } from '../../_lib/utils';
 
 export async function POST(request: NextRequest) {
     try {

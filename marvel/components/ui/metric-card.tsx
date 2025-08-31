@@ -1,7 +1,7 @@
 import { StarkCard } from "./stark-card"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown, Minus } from "lucide-react"
-import { formatCurrency, formatPercentage, cn } from "@/lib/utils"
+import { formatCurrency, formatPercentage, cn } from "../../app/(finance)/_lib/utils"
 
 interface MetricCardProps {
     title: string
