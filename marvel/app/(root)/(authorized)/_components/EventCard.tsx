@@ -6,14 +6,16 @@ import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 
 interface EventCardProps {
-  title?: string;
-  date?: string;
-  time?: string;
-  location?: string;
-  description?: string;
-  priority?: "High" | "Medium" | "Low";
-  _id: Id<"events">
-  isCleared?: boolean;
+  _id: Id<"events">;
+  _creationTime: number;
+  description?: string | undefined;
+  isCleared?: "success" | "failed" | "ignored" | undefined;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  priority: "High" | "Medium" | "Low";
+  userId: Id<"users">;
 }
 
 const priorityColors = {
@@ -38,7 +40,7 @@ export const EventCard: React.FC<EventCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.03, boxShadow: "0 10px 20px rgba(0,0,0,0.12)" }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="border rounded-xl p-4 shadow-sm hover:shadow-md transition-colors bg-white"
+      className="border border-foreground rounded-xl p-4 shadow-sm hover:shadow-md transition-color bg-card"
     >
       <Link href={`/calender/${_id}`}>
         <div className="flex justify-between items-start">

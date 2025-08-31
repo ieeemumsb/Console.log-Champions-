@@ -61,10 +61,10 @@ export const CalenderIdView = ({
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-64px)] p-6 gap-6 mb-10">
+    <div className="flex flex-col h-[calc(100vh-64px)] p-2 gap-6 mb-10 w-full">
       {/* Event Details + Actions */}
       <div className="flex justify-between items-start ">
-        <div className="flex-1 pr-8">
+        <div className="flex-1">
           <h1
             className={cn(
               "text-3xl font-bold",
@@ -73,7 +73,7 @@ export const CalenderIdView = ({
           >
             {event.title}
           </h1>
-          <p className="text-gray-600 mt-2">{event.description}</p>
+          <p className="text-muted-foreground mt-2">{event.description}</p>
           {event.isCleared && (
             <p className="mt-4 text-lg font-semibold text-emerald-600">
               Cleared Status: {clearingStatus ?? "Cleared"}
@@ -147,7 +147,7 @@ export const CalenderIdView = ({
       </div>
 
       {/* Map Section */}
-      <div className="flex-1 bg-white rounded-xl shadow p-4">
+      <div className="flex-1 bg-white rounded-xl shadow p-1">
         <MapView location={event.location} />
       </div>
     </div>

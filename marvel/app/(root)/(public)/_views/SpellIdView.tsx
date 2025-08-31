@@ -123,7 +123,7 @@ export const SpellIdView = ({ spellId }: { spellId: string }) => {
                   ${
                     msg.role === "user"
                       ? "bg-primary text-primary-foreground rounded-2xl rounded-br-md ml-8"
-                      : "bg-muted text-muted-foreground rounded-2xl rounded-bl-md mr-8"
+                      : "bg-muted  rounded-2xl rounded-bl-md mr-8"
                   }
                 `}
                 style={{

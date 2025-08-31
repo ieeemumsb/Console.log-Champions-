@@ -1,3 +1,4 @@
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -15,34 +16,43 @@ import {
 import { BookOpen, ChartColumnDecreasing, Siren } from "lucide-react";
 import { NeedHelp } from "./NeedHelp";
 import { cn } from "@/lib/utils";
-import { Authenticated } from "convex/react";
-import { UserButton } from "@clerk/nextjs";
 import { ButtonUser } from "@/components/ButtonUser";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const items = [
   {
     title: "Stark Finance",
-    url: "#",
+    url: "/finance",
     icon: ChartColumnDecreasing,
     className: "text-blue-500",
   },
   {
     title: "Strange Libary",
-    url: "#",
+    url: "/spell",
     icon: BookOpen,
     className: "text-green-500",
   },
-  { title: "SpyderSense", url: "#", icon: Siren, className: "text-red-500" },
+  {
+    title: "SpyderSense",
+    url: "/calender",
+    icon: Siren,
+    className: "text-red-500",
+  },
 ];
 
 export function PublicSidebar() {
+  const pathname = usePathname();
+
   return (
     <Sidebar collapsible="icon" className="z-[51]">
       <SidebarHeader>
         <SidebarMenu className="px-4 py-3">
-          <span className="text-2xl font-bold flex items-center">
-            🕸️ <span className="ml-2">SpyWeb</span>
-          </span>
+          <Link href={"/"} className="text-2xl font-bold flex items-center">
+            <span className="text-2xl font-bold flex items-center">
+              🕸️ <span className="ml-2">InfinityWeb</span>
+            </span>
+          </Link>
         </SidebarMenu>
       </SidebarHeader>
 
@@ -54,7 +64,14 @@ export function PublicSidebar() {
           <SidebarGroupContent>
             <SidebarMenu className="mt-3">
               {items.map((item) => (
-                <SidebarMenuItem key={item.title} className="py-2">
+                <SidebarMenuItem
+                  key={item.title}
+                  className={cn(
+                    "py-2",
+                    pathname === item.url &&
+                      "bg-accent-foreground text-background"
+                  )}
+                >
                   <SidebarMenuButton
                     asChild
                     className="hover:bg-accent-foreground hover:text-background"

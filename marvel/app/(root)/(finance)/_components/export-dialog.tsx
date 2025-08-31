@@ -93,7 +93,7 @@ export function ExportDialog({ dashboardData, alerts, forecasts }: ExportDialogP
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="sm:max-w-[500px]">
+            <DialogContent className="sm:max-w-[500px] overflow-y-auto max-h-[90%]">
                 <DialogHeader>
                     <DialogTitle>Export Financial Report</DialogTitle>
                     <DialogDescription>
