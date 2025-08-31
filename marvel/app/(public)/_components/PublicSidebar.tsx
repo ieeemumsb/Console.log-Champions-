@@ -12,20 +12,27 @@ import {
   SidebarFooter,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import {
-  DollarSign,
-  BookOpen,
-  CalendarDays,
- 
-} from "lucide-react";
+import { BookOpen, ChartColumnDecreasing, Siren } from "lucide-react";
 import { NeedHelp } from "./NeedHelp";
-
-
+import { cn } from "@/lib/utils";
+import { Authenticated } from "convex/react";
+import { UserButton } from "@clerk/nextjs";
+import { ButtonUser } from "@/components/ButtonUser";
 
 const items = [
-  { title: "Finance", url: "#", icon: DollarSign },
-  { title: "Library", url: "#", icon: BookOpen },
-  { title: "Events", url: "#", icon: CalendarDays },
+  {
+    title: "Stark Finance",
+    url: "#",
+    icon: ChartColumnDecreasing,
+    className: "text-blue-500",
+  },
+  {
+    title: "Strange Libary",
+    url: "#",
+    icon: BookOpen,
+    className: "text-green-500",
+  },
+  { title: "SpyderSense", url: "#", icon: Siren, className: "text-red-500" },
 ];
 
 export function PublicSidebar() {
@@ -48,10 +55,13 @@ export function PublicSidebar() {
             <SidebarMenu className="mt-3">
               {items.map((item) => (
                 <SidebarMenuItem key={item.title} className="py-2">
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    asChild
+                    className="hover:bg-accent-foreground hover:text-background"
+                  >
                     <a href={item.url}>
-                      <item.icon />
-                      <span className="text-base">{item.title}</span>
+                      <item.icon className={item.className} />
+                      <span className={cn("text-base")}>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -60,17 +70,16 @@ export function PublicSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup className="mt-5">
-          <SidebarGroupLabel className="pb-4">Your Friendly Neighborhood</SidebarGroupLabel>
+          <SidebarGroupLabel className="pb-4">
+            Your Friendly Neighborhood
+          </SidebarGroupLabel>
           <SidebarGroupContent>
-           <NeedHelp />
+            <NeedHelp />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-
       <SidebarFooter>
-        <span className="text-sm text-muted-foreground text-center pb-4">
-          © 2025 Spiderman Inc.
-        </span>
+        <ButtonUser />
       </SidebarFooter>
 
       <SidebarRail />

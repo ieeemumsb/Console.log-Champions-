@@ -13,6 +13,9 @@ export default function Home() {
       <Link href={"/"}>
         <Button>Study</Button>
       </Link>
+      <span className="text-sm text-muted-foreground text-center pb-4">
+        © 2025 Spiderman Inc.
+      </span>
     </>
   );
 }
