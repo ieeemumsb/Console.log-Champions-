@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateExecutiveReport, generateDetailedReport, generateForecastReport, ReportData } from '@/lib/report-generator'
+import { generateExecutiveReport, generateDetailedReport, generateForecastReport, ReportData } from '../../_lib/report-generator'
+
+
+
 
 export async function POST(request: NextRequest) {
     try {

@@ -87,24 +87,40 @@ export default function Analytics() {
             })
 
             const fallbackData = {
-                forecasts,
-                insights: {
-                    revenue_trend: 'increasing',
-                    confidence_score: 82.4,
-                    key_risks: ['Competition from Oscorp', 'Technology disruption', 'Economic downturn'],
-                    opportunities: ['Arc reactor technology licensing', 'Clean energy expansion', 'AI integration'],
-                    recommendations: [
-                        'Increase R&D investment by 15% to maintain technological edge',
-                        'Diversify revenue streams beyond defense contracts',
-                        'Focus on sustainable energy solutions for long-term growth'
-                    ]
+              forecasts: [
+                {
+                  period: "Q1",
+                  predicted_revenue: 100000,
+                  confidence: 0.9,
+                  growth_rate: 0.05,
+                  risk_factors: ["economic downturn"],
                 },
-                performance_metrics: {
-                    accuracy: 89.2,
-                    trend_strength: 76.8,
-                    volatility: 12.4
-                }
-            }
+              ],
+              insights: {
+                revenue_trend: "increasing" as const,
+                confidence_score: 82.4,
+                key_risks: [
+                  "Competition from Oscorp",
+                  "Technology disruption",
+                  "Economic downturn",
+                ],
+                opportunities: [
+                  "Arc reactor technology licensing",
+                  "Clean energy expansion",
+                  "AI integration",
+                ],
+                recommendations: [
+                  "Increase R&D investment by 15% to maintain technological edge",
+                  "Diversify revenue streams beyond defense contracts",
+                  "Focus on sustainable energy solutions for long-term growth",
+                ],
+              },
+              performance_metrics: {
+                accuracy: 89.2,
+                trend_strength: 76.8,
+                volatility: 12.4,
+              },
+            };
             
             setAnalyticsData(fallbackData)
         } finally {
