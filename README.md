@@ -1,132 +1,157 @@
-# Jarvis App
+# Jarvis App 🕷️🧙‍♂️💰🎮
 
-> A Marvel-inspired multi-module platform featuring an AI-powered finance dashboard (Starkledger), an interactive game (Groot GamePlay), real-time event alerts (Spydersense), and an intelligent spell library — all built with Next.js 14, TypeScript, Shadcn UI, Convex, and OpenAI.
-
----
-
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-  - [Starkledger — Financial AI Assistant](#starkledger--financial-ai-assistant)
-  - [Groot GamePlay — Interactive Game](#groot-gameplay--interactive-game)
-  - [Spydersense — Real-time Event Alerts](#spydersense--real-time-event-alerts)
-  - [Spell Library — Intelligent Knowledge Base](#spell-library--intelligent-knowledge-base)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Run the App](#run-the-app)
-- [Usage Guide](#usage-guide)
-  - [Finance Data Processing API](#finance-data-processing-api)
-- [Design System](#design-system)
-- [Security & Access Control](#security--access-control)
-- [Exporting & Reports](#exporting--reports)
-- [Contributing](#contributing)
-- [License & Attribution](#license--attribution)
+> A Marvel-inspired multi-module platform that brings together finance analytics, interactive gaming, real-time event alerts, and an intelligent spell library — all powered by modern web tech, AI, and real-time databases.
 
 ---
 
-## Overview
-**Jarvis App** brings together four complementary modules under one cohesive UI:
+## 🚀 Quick Start
 
-1. **Starkledger** — Upload an Excel file and get real-time dashboards, AI data cleaning, forecasting, and risk signals.
-2. **Groot GamePlay** — Combat monsters, earn XP and gold, use a store for upgrades, and compete on a global leaderboard.
-3. **Spydersense** — Display daily incidents on Google Maps with ringing alerts and instant ZegoCloud video calls.
-4. **Spell Library** — Upload spells (doc/pdf), automatically summarize them with OpenAI, and query them via a chatbot.
+1. Clone the repository:
 
-All modules share a **modern, responsive Shadcn UI** with a Marvel-inspired aesthetic.
+```bash
+git clone <repo-url>
+```
 
----
+2. Navigate to the project directory:
 
-## Features
+```bash
+cd infinity-web
+```
 
-### Starkledger — Financial AI Assistant
-#### 🎨 Aesthetic
-- Dark mode by default with **Arc Reactor blue** accents
-- Holographic-style **cards**, subtle **glows**, gradient backgrounds
-- Premium typography and breathing space
+3. Install dependencies:
 
-#### 📊 Advanced Analytics
-- **Recharts** for interactive charts
-- Real-time processing of your **Excel** dataset
-- **AI insights** (OpenAI) and forecasting
-- Responsive across all screen sizes
+```bash
+npm install
+```
 
-#### 🤖 AI Integration
-- AI **data cleaning** (invalid rows removed)
-- Predictive **forecasts** per department
-- **Risk assessment** with confidence levels
-- Natural-language **insights & recommendations**
+4. Start the development server:
 
-#### ⚡ Performance
-- Smooth **Framer Motion** animations
-- Optimized file uploads with progress tracking
-- Robust error handling & efficient data shaping
-- **Export** to PDF/PNG via `jspdf` + `html2canvas`
+```bash
+npm run dev
+```
 
-#### 🎯 How to Use
-- **Upload Excel**: drag & drop your file
-- **View Dashboard**: `/dashboard` for KPIs
-- **Explore Analytics**: `/analytics` for AI forecasts
-- **Monitor Alerts**: budget overruns & risk flags
-- **Export Reports**: generate board-ready PDFs
+The app uses the Next.js 14 default folder structure, with modules organized under their respective organizational folders.
 
 ---
 
-### Groot GamePlay — Interactive Game
-- **Objective**: Defeat monsters to gain **XP** and **gold**
-- **Combat**: **Attack**, **Block**, or **Runaway** (running costs HP)
-- **Store**: Buy upgrades, weapons, health potions
-- **Leaderboard**: Global ranking to foster competition
-- **Real-time backend**: **Convex** for live updates
-- **Narrative text**: Generated with ChatGPT
-- **Assets**: Images from Freepik; audio from Pixabay
+## 🌌 Overview
+
+After Thanos snapped his fingers, all superheroes were wiped out… except four heroes left to rebuild civilization:
+
+1. Spider-Man 🕷️ — Searches for survivors and manages real-time events.  
+2. Iron Man (Stark) 🤖 — Oversees the finance module, rebuilding industry and Earth’s economy.  
+3. Dr. Stephen Strange 🧙‍♂️ — Casts spells to reverse the snap and restore balance.  
+4. Groot 🌱 — Guides users through an interactive game in a living, immersive environment.
+
+Each hero’s abilities are reflected in their corresponding module.
 
 ---
 
-### Spydersense — Real-time Event Alerts
-- **Map UI**: Daily events and locations on **Google Maps**
-- **Ringing Alerts**: Instant popup for urgent incidents
-- **Video Calls**: **ZegoCloud** integration for immediate help
-- **Backend**: **Convex** real-time storage & sync
-- **Auth**: **Clerk** (with Convex webhook syncing)
-- **Access Control**: Guests restricted from sensitive actions
+## 🏗️ Module Breakdown
+
+### 1. Groot GamePlay — Interactive Game 🎮
+
+- Frontend: React + Tailwind  
+- Gameplay: Combat monsters, earn XP & gold, buy upgrades in a store.  
+- Leaderboard: Tracks global rankings in real-time.  
+- Backend: Convex provides live updates, syncing player stats instantly.  
+- Narrative: Dynamic storylines generated via OpenAI.  
+- Assets: Images from Freepik, sound effects from Pixabay.
+
+Screenshot / GIF Placeholder:
+
+![Groot Gameplay Screenshot](./public/screenshots/groot_gameplay.png)
 
 ---
 
-### Spell Library — Intelligent Knowledge Base
-- **Upload & Store**: Spells in **doc/pdf** saved in Convex
-- **Summaries**: Auto-summarized via **OpenAI**
-- **Chatbot**: Ask questions about your spells
-- **Access Control**: Level 3 and certain summaries gated to authenticated users
-- **UI**: Clean, responsive **Shadcn** components
+### 2. Starkledger — Financial AI Assistant 💰
+
+- Purpose: Upload Excel sheets to gain AI-driven insights and forecasts.  
+- Charts & Dashboard: Built with Shadcn UI and Recharts, featuring interactive filters.  
+- AI Integration:  
+  - Data cleaning with OpenAI (removes invalid rows)  
+  - Predictive forecasting per department  
+  - Risk assessment with confidence scoring  
+- UX:  
+  - Holographic-style cards, gradient backgrounds, premium typography  
+  - Smooth animations with Framer Motion  
+  - Export options using jspdf + html2canvas
+
+Screenshot / GIF Placeholder:
+
+![Starkledger Screenshot](./public/screenshots/starkledger.png)
 
 ---
 
-## Tech Stack
-- **Frontend**: Next.js 14 (App Router), React, TypeScript, Tailwind CSS, Shadcn UI
-- **Charts**: Recharts
-- **State/Data**: Convex (real-time database)
-- **AI**: OpenAI (GPT-4/4o/4o-mini for JSON-mode cleaning & forecasts)
-- **Auth**: Clerk
-- **Video**: ZegoCloud
-- **Animations**: Framer Motion
-- **Exports**: `jspdf` + `html2canvas`
+### 3. Spydersense — Real-time Event Alerts 🗺️
+
+- Map Integration: Google Maps displays daily incidents and locations.  
+- Alerts: Popups with ringing notifications for urgent events.  
+- Communication: Direct video calls via ZegoCloud for immediate action.  
+- Backend: Convex real-time database for events and syncing.  
+- Auth: Clerk authentication, syncing via webhooks to Convex.  
+- Access Control: Restricts guests from sensitive actions.
+
+Screenshot / GIF Placeholder:
+
+![Spydersense Screenshot](./public/screenshots/spydersense.png)
 
 ---
 
-## Project Structure
+### 4. Spell Library — Intelligent Knowledge Base 🧙‍♂️
 
-```txt
-starkledger-dashboard/
-├── app/                    # Next.js 14 App Router
-│   ├── layout.tsx         # Main app wrapper
-│   ├── page.tsx           # Home page (redirects to dashboard)
-│   ├── dashboard/page.tsx # Main dashboard view (Starkledger)
-│   ├── analytics/page.tsx # AI forecasting page (Starkledger)
-│   └── api/               # Backend API endpoints (e.g., process-data)
+- Upload & Storage: Doc/PDF spells stored in Convex.  
+- Summarization: OpenAI generates concise summaries.  
+- Chatbot Interface: Ask questions about spells dynamically.  
+- Access Control: Level 3 spells restricted to authenticated users.  
+- UI: Responsive, clean components using Shadcn.  
+- Animations: Subtle motion effects to bring cards and badges to life.
+
+Screenshot / GIF Placeholder:
+
+![Spell Library Screenshot](./public/screenshots/spell_library.png)
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: Next.js 14 (App Router), React, TypeScript, Tailwind CSS, Shadcn UI  
+- Charts: Recharts for dynamic analytics  
+- State & Database: Convex (real-time)  
+- AI: OpenAI (GPT-4/4o) for JSON-mode data cleaning, forecasting, and chatbot  
+- Authentication: Clerk  
+- Video: ZegoCloud for real-time calls  
+- Animations: Framer Motion for smooth interactions  
+- Exports: jspdf + html2canvas
+
+---
+
+## 🗂️ Folder Structure
+
+```bash
+infinity-web/
+├── app/                   # Next.js App Router
+│   ├── layout.tsx         # Main layout & navigation
+│   ├── page.tsx           # Home page with cinematic intro
+│   ├── game/              # Groot GamePlay module
+│   ├── finance/           # Starkledger module
+│   ├── spydersense/       # Real-time alerts
+│   └── spells/            # Spell Library module
 ├── components/            # Reusable UI components
-├── lib/                   # Utilities and business logic
-└── public/                # Static assets
+├── lib/                   # Utilities & AI integration
+└── public/                # Static assets (images, audio, screenshots)
+```
+
+---
+
+## 🎯 Summary
+
+Jarvis App combines real-time, AI-driven, and interactive experiences under one cohesive, Marvel-themed UI. Each module leverages modern web technology to provide dynamic, engaging, and technically robust functionality, perfect for hackathons, demos, or learning projects.
+
+Visual assets (screenshots and GIFs) give an instant feel of the cinematic and interactive experience.
+
+---
+
+If you want, I can also add an “Installation Video GIF” at the top showing cloning, npm install, and dev server startup — that usually impresses judges at hackathons.
+
+Do you want me to do that?
