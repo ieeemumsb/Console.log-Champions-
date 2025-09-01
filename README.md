@@ -1,4 +1,4 @@
-# Jarvis App 🕷️🧙‍♂️💰🎮
+# InfinityWeb App 🕷️🧙‍♂️💰🎮
 
 > A Marvel-inspired multi-module platform that brings together finance analytics, interactive gaming, real-time event alerts, and an intelligent spell library — all powered by modern web tech, AI, and real-time databases.
 
@@ -58,9 +58,8 @@ Each hero’s abilities are reflected in their corresponding module.
 - Narrative: Dynamic storylines generated via OpenAI.  
 - Assets: Images from Freepik, sound effects from Pixabay.
 
-Screenshot / GIF Placeholder:
+<img width="1897" height="1044" alt="image" src="https://github.com/user-attachments/assets/19aa6c99-5161-41a2-a39c-c29d34ef76df" />
 
-![Groot Gameplay Screenshot](./public/screenshots/groot_gameplay.png)
 
 ---
 
@@ -77,11 +76,8 @@ Screenshot / GIF Placeholder:
   - Smooth animations with Framer Motion  
   - Export options using jspdf + html2canvas
 
-Screenshot / GIF Placeholder:
+<img width="1918" height="1048" alt="image" src="https://github.com/user-attachments/assets/bd998a97-2f80-4c1e-8492-2fb1d62e18a6" />
 
-![Starkledger Screenshot](./public/screenshots/starkledger.png)
-
----
 
 ### 3. Spydersense — Real-time Event Alerts 🗺️
 
@@ -92,9 +88,8 @@ Screenshot / GIF Placeholder:
 - Auth: Clerk authentication, syncing via webhooks to Convex.  
 - Access Control: Restricts guests from sensitive actions.
 
-Screenshot / GIF Placeholder:
+<img width="1915" height="1045" alt="image" src="https://github.com/user-attachments/assets/a53c68ad-8bee-4a98-8630-74d69bc5a552" />
 
-![Spydersense Screenshot](./public/screenshots/spydersense.png)
 
 ---
 
@@ -107,9 +102,8 @@ Screenshot / GIF Placeholder:
 - UI: Responsive, clean components using Shadcn.  
 - Animations: Subtle motion effects to bring cards and badges to life.
 
-Screenshot / GIF Placeholder:
+<img width="1915" height="1045" alt="image" src="https://github.com/user-attachments/assets/204467d3-c13e-4c43-b440-b99cb234db3c" />
 
-![Spell Library Screenshot](./public/screenshots/spell_library.png)
 
 ---
 
@@ -146,12 +140,4 @@ infinity-web/
 
 ## 🎯 Summary
 
-Jarvis App combines real-time, AI-driven, and interactive experiences under one cohesive, Marvel-themed UI. Each module leverages modern web technology to provide dynamic, engaging, and technically robust functionality, perfect for hackathons, demos, or learning projects.
-
-Visual assets (screenshots and GIFs) give an instant feel of the cinematic and interactive experience.
-
----
-
-If you want, I can also add an “Installation Video GIF” at the top showing cloning, npm install, and dev server startup — that usually impresses judges at hackathons.
-
-Do you want me to do that?
+InfinityWeb App combines real-time, AI-driven, and interactive experiences under one cohesive, Marvel-themed UI. Each module leverages modern web technology to provide dynamic, engaging, and technically robust functionality, perfect for hackathons, demos, or learning projects.
